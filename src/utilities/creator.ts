@@ -1,23 +1,4 @@
-interface AttrTypes {
-  [key: string]: string;
-}
-
-interface ParamsTypes {
-  tagName: string;
-  classList?: string;
-  attr?: AttrTypes;
-  text?: string;
-}
-
-export const headerParams: ParamsTypes = {
-  tagName: "header",
-  classList: "header",
-  attr: {
-    id: "header",
-    "data-test": "test",
-  },
-  text: "test",
-};
+import type { ParamsTypes } from "../types/types.ts";
 
 export class Creator {
   element!: HTMLElement;
@@ -25,7 +6,6 @@ export class Creator {
   constructor(objectParams: ParamsTypes) {
     this.params = objectParams;
     this.element = this.tagCreator(this.params.tagName);
-    console.log(this.element);
     this.setClassList();
     this.setText();
     this.setAttr();

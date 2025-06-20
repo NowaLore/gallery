@@ -1,5 +1,3 @@
-import { Creator, headerParams } from "./utilities/creator.js";
-console.log(headerParams);
+import { Controler } from "./app/controler/controler";
 
-const headerElement = new Creator(headerParams);
-console.log(headerElement.getElement());
+new Controler();
