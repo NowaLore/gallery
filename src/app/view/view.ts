@@ -1,15 +1,22 @@
 import { Header } from "../componets/header/header";
-import { headerParams } from "../componets/header/header-params";
 
 export class View {
   appContainer;
-  header = new Header(headerParams);
+  header = new Header();
+  // main = new Main(mainPrams).getElement();
+  // footer = new Footer(footerParams).getElement();
   constructor() {
     this.appContainer = this.initRender();
-    console.log(this.appContainer);
+    this.interfaceBuilder();
   }
 
   initRender() {
     return document.querySelector("#app");
+  }
+
+  interfaceBuilder() {
+    if (this.appContainer && this.header) {
+      this.appContainer.append(this.header.element.element);
+    }
   }
 }
