@@ -19,6 +19,20 @@ export const listButtonsParams: ParamsTypes = {
   },
 };
 
+export const searchInputParams: ParamsTypes = {
+  tagName: "input",
+  classList: "",
+  attr: {},
+};
+
+export const searchFormParams: ParamsTypes = {
+  tagName: "form",
+};
+
+export const searchSubmitParams: ParamsTypes = {
+  tagName: "button",
+};
+
 // export const mainPrams: ParamsTypes = {
 //   tagName: "main",
 //   classList: "main",

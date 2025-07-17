@@ -1,12 +1,19 @@
 import { Creator } from "../../../utilities/creator";
 import { dataButtons } from "./data-buttons";
-import { headerParams, listButtonsParams } from "./header-params";
+import {
+  headerParams,
+  listButtonsParams,
+  searchFormParams,
+  searchInputParams,
+  searchSubmitParams,
+} from "./header-params";
 
 export class Header {
   element = new Creator(headerParams);
   constructor() {
     if (this.element.getElement()) {
       this.createButtons();
+      this.formCreator();
     }
   }
 
@@ -24,8 +31,24 @@ export class Header {
       this.element.getElement()!.append(listButtons);
     }
   }
+
+  formCreator() {
+    // 1. Создать через Creator форму, инпут и кнопку
+    // 2. Выполнить вставку в нужном порядке
+    const formSearchElement = new Creator(
+      searchFormParams,
+    ).getElement() as HTMLFormElement;
+    const formInputElement = new Creator(
+      searchInputParams,
+    ).getElement() as HTMLInputElement;
+    const formSubmitElement = new Creator(
+      searchSubmitParams,
+    ).getElement() as HTMLButtonElement;
+
+    formSearchElement.append(formInputElement, formSubmitElement);
+    this.element.getElement()?.append(formSearchElement);
+  }
 }
-// Создать метод, который будет принимать массив кнопок, пробегаться по нему циклом и из каждого объекта создавать кнопку
 // export class Main extends Creator {
 //   constructor(objectParams: ParamsTypes) {
 //     super(objectParams);
