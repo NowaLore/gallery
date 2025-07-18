@@ -10,18 +10,17 @@ import {
 
 export class Header {
   element = new Creator(headerParams);
+  form;
   constructor() {
     if (this.element.getElement()) {
       this.createButtons();
-      this.formCreator();
+      this.form = this.formCreator();
     }
   }
 
   createButtons() {
     const listButtons = new Creator(listButtonsParams).getElement();
     for (let i = 0; i < dataButtons.length; i++) {
-      console.log(dataButtons);
-
       const currButton = new Creator(dataButtons[i]).getElement();
       if (listButtons && currButton) {
         listButtons.append(currButton);
@@ -33,8 +32,6 @@ export class Header {
   }
 
   formCreator() {
-    // 1. Создать через Creator форму, инпут и кнопку
-    // 2. Выполнить вставку в нужном порядке
     const formSearchElement = new Creator(
       searchFormParams,
     ).getElement() as HTMLFormElement;
@@ -47,6 +44,7 @@ export class Header {
 
     formSearchElement.append(formInputElement, formSubmitElement);
     this.element.getElement()?.append(formSearchElement);
+    return formSearchElement;
   }
 }
 // export class Main extends Creator {

@@ -22,7 +22,7 @@ export const listButtonsParams: ParamsTypes = {
 export const searchInputParams: ParamsTypes = {
   tagName: "input",
   classList: "",
-  attr: {},
+  attr: { name: "input" },
 };
 
 export const searchFormParams: ParamsTypes = {
