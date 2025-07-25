@@ -12,9 +12,10 @@ export class Controler {
   setListeners() {
     this.view.header.form?.addEventListener("submit", (e) => this.getData(e));
   }
-
-  getData(e) {
+  async getData(e) {
     e.preventDefault();
-    console.log(new FormData(e.target).get("input"));
+    const userInput = new FormData(e.target).get("input");
+    const data = await this.model.getDataFromServer(userInput);
+    this.view.imagesList(data);
   }
 }

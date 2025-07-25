@@ -1,4 +1,29 @@
+// import type { ParamsTypes } from "../../types/types";
 import { Header } from "../componets/header/header";
+
+// const imgListParams: ParamsTypes = {
+//   tagName: "ul",
+//   classList: "img-list",
+//   attr: {
+
+//   },
+// }
+
+// const imgListItemParams: ParamsTypes = {
+//   tagName: "li",
+//   classList: "item",
+//   attr: {
+
+//   },
+// }
+
+// const imgParams: ParamsTypes = {
+//   tagName: "img",
+//   classList: "img",
+//   attr: {
+
+//   },
+// }
 
 export class View {
   appContainer;
@@ -17,6 +42,12 @@ export class View {
   interfaceBuilder() {
     if (this.appContainer && this.header) {
       this.appContainer.append(this.header.element.element);
+    }
+  }
+
+  imagesList(data) {
+    for (let i = 0; i < data.results.length; i++) {
+      console.log(data.results[i].urls.regular);
     }
   }
 }
