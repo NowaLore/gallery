@@ -33,16 +33,6 @@ export const searchSubmitParams: ParamsTypes = {
   tagName: "button",
 };
 
-// export const mainPrams: ParamsTypes = {
-//   tagName: "main",
-//   classList: "main",
-//   attr: {
-//     id: "main",
-//     "data-test": "test",
-//   },
-//   text: "test",
-// }
-
 // export const footerParams: ParamsTypes = {
 //   tagName: "footer",
 //   classList: "footer",

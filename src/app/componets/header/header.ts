@@ -47,11 +47,6 @@ export class Header {
     return formSearchElement;
   }
 }
-// export class Main extends Creator {
-//   constructor(objectParams: ParamsTypes) {
-//     super(objectParams);
-//   }
-// }
 
 // export class Footer extends Creator {
 //   constructor(objectParams: ParamsTypes) {
