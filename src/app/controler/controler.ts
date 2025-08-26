@@ -16,6 +16,7 @@ export class Controler {
     e.preventDefault();
     const userInput = new FormData(e.target).get("input");
     const data = await this.model.getDataFromServer(userInput);
+    this.view.main.clearRender();
     this.view.main.imagesList(data);
   }
 }

@@ -48,4 +48,10 @@ export class Main {
     }
     this.imgList?.append(template);
   }
+
+  clearRender() {
+    if (this.imgList) {
+      this.imgList.innerHTML = "";
+    }
+  }
 }
