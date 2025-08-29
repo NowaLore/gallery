@@ -1,7 +1,7 @@
 import type { ParamsTypes } from "../types/types.ts";
 
 export class Creator {
-  element!: HTMLElement;
+  element: HTMLElement | undefined;
   params: ParamsTypes;
   constructor(objectParams: ParamsTypes) {
     this.params = objectParams;

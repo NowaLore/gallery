@@ -16,10 +16,10 @@ export class View {
   }
 
   interfaceBuilder() {
-    if (this.appContainer && this.header) {
+    if (this.appContainer && this.header.element.element) {
       this.appContainer.append(this.header.element.element);
     }
-    if (this.appContainer && this.main) {
+    if (this.appContainer && this.main.element.element) {
       this.appContainer.append(this.main.element.element);
     }
   }

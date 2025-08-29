@@ -1,4 +1,4 @@
-import type { ParamsTypes } from "../../types/types";
+import type { Data, ParamsTypes } from "../../types/types";
 import { Creator } from "../../utilities/creator";
 const mainParams: ParamsTypes = {
   tagName: "main",
@@ -34,11 +34,11 @@ export class Main {
   constructor() {
     this.element.getElement()?.append(this.imgList as HTMLUListElement);
   }
-  imagesList(data) {
+  imagesList(data: Data) {
     const template = new DocumentFragment();
     for (let i = 0; i < data.results.length; i++) {
-      console.log(data.results[i].urls.regular);
-      const item = new Creator(imgListItemParams).getElement();
+      console.log(data);
+      const item = new Creator(imgListItemParams).getElement() as HTMLLIElement;
       const image: HTMLImageElement = new Creator(
         imgParams,
       ).getElement() as HTMLImageElement;
