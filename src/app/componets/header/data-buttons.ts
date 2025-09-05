@@ -3,35 +3,40 @@ export const dataButtons = [
     tagName: "button",
     attr: {
       src: "hat.svg",
-      value: "hip-hop",
+      "data-btn": "hip-hop",
     },
+    text: "hip-hop",
   },
   {
     tagName: "button",
     attr: {
       src: "rapper.svg",
-      value: "rap",
+      "data-btn": "rap",
     },
+    text: "rap",
   },
   {
     tagName: "button",
     attr: {
       src: "rock.svg",
-      value: "rock music",
+      "data-btn": "rock-music",
     },
+    text: "rock music",
   },
   {
     tagName: "button",
     attr: {
       src: "saxophone.svg",
-      value: "jazz",
+      "data-btn": "jazz",
     },
+    text: "jazz",
   },
   {
     tagName: "button",
     attr: {
       src: "violin.svg",
-      value: "classic music",
+      "data-btn": "classic music",
     },
+    text: "classic music",
   },
 ];

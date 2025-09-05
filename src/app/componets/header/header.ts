@@ -11,9 +11,10 @@ import {
 export class Header {
   element = new Creator(headerParams);
   form;
+  buttons;
   constructor() {
     if (this.element.getElement()) {
-      this.createButtons();
+      this.buttons = this.createButtons();
       this.form = this.formCreator();
     }
   }
@@ -29,6 +30,7 @@ export class Header {
     if (this.element.getElement() && listButtons) {
       this.element.getElement()!.append(listButtons);
     }
+    return listButtons;
   }
 
   formCreator() {
@@ -48,8 +50,8 @@ export class Header {
   }
 }
 
-// export class Footer extends Creator {
-//   constructor(objectParams: ParamsTypes) {
-//     super(objectParams);
-//   }
-// }
+// 1. Сделать список кнопок частью хедера также как и форму
+// 2. В контролере повесить прослушку на список
+// 3. Через событие найти таргет который является кнопкой, если кнопка - получить значение аттрибута
+// 4. Передать значение в getDataFromServer
+// 5. Запустить рендер
