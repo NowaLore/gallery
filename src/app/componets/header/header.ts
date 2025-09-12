@@ -1,5 +1,5 @@
 import { Creator } from "../../../utilities/creator";
-import { dataButtons } from "./data-buttons";
+import { dataButtons, wrapperImg, wrapperText } from "./data-buttons";
 import {
   headerParams,
   listButtonsParams,
@@ -20,14 +20,23 @@ export class Header {
   }
 
   createButtons() {
-    const listButtons = new Creator(listButtonsParams).getElement();
+    const listButtons = new Creator(
+      listButtonsParams,
+    ).getElement() as HTMLElement;
     for (let i = 0; i < dataButtons.length; i++) {
-      const currButton = new Creator(dataButtons[i]).getElement();
-      if (listButtons && currButton) {
-        listButtons.append(currButton);
-      }
+      const currButton = new Creator(
+        dataButtons[i],
+      ).getElement() as HTMLElement;
+      const wrapperIconElement = new Creator(
+        wrapperImg[i],
+      ).getElement() as HTMLElement;
+      const wrapperTextElement = new Creator(
+        wrapperText[i],
+      ).getElement() as HTMLElement;
+      currButton?.append(wrapperTextElement, wrapperIconElement);
+      listButtons.append(currButton);
     }
-    if (this.element.getElement() && listButtons) {
+    if (this.element.getElement()) {
       this.element.getElement()!.append(listButtons);
     }
     return listButtons;

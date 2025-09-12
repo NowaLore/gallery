@@ -4,7 +4,7 @@ export interface AttrTypes {
 
 export interface ParamsTypes {
   tagName: string;
-  classList?: string;
+  classList?: string[];
   attr?: AttrTypes;
   text?: string;
 }

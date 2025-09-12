@@ -13,7 +13,7 @@ export class Creator {
 
   setClassList() {
     if (this.element && this.params.classList) {
-      this.element.classList.add(this.params.classList);
+      this.element.classList.add(...this.params.classList);
     }
   }
 

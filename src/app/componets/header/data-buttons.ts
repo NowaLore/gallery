@@ -1,42 +1,90 @@
+import style from "./buttons.module.css";
+
 export const dataButtons = [
   {
     tagName: "button",
+    classList: [style.button],
     attr: {
-      src: "hat.svg",
       "data-btn": "hip-hop",
     },
+  },
+  {
+    tagName: "button",
+    classList: [style.button],
+    attr: {
+      "data-btn": "rap",
+    },
+  },
+  {
+    tagName: "button",
+    classList: [style.button],
+    attr: {
+      "data-btn": "rock-music",
+    },
+  },
+  {
+    tagName: "button",
+    classList: [style.button],
+    attr: {
+      "data-btn": "jazz",
+    },
+  },
+  {
+    tagName: "button",
+    classList: [style.button],
+    attr: {
+      "data-btn": "classic music",
+    },
+  },
+];
+
+export const wrapperImg = [
+  {
+    tagName: "span",
+    classList: [style.wrapperImage, style.hipHopIcon],
+  },
+  {
+    tagName: "span",
+    classList: [style.wrapperImage, style.rapIcon],
+  },
+  {
+    tagName: "span",
+    classList: [style.wrapperImage, style.rockIcon],
+  },
+  {
+    tagName: "span",
+    classList: [style.wrapperImage, style.jazzIcon],
+  },
+  {
+    tagName: "span",
+    classList: [style.wrapperImage, style.classicIcon],
+  },
+];
+
+export const wrapperText = [
+  {
+    tagName: "span",
+    classList: [style.wrapperText],
     text: "hip-hop",
   },
   {
-    tagName: "button",
-    attr: {
-      src: "rapper.svg",
-      "data-btn": "rap",
-    },
+    tagName: "span",
+    classList: [style.wrapperText],
     text: "rap",
   },
   {
-    tagName: "button",
-    attr: {
-      src: "rock.svg",
-      "data-btn": "rock-music",
-    },
-    text: "rock music",
+    tagName: "span",
+    classList: [style.wrapperText],
+    text: "rock",
   },
   {
-    tagName: "button",
-    attr: {
-      src: "saxophone.svg",
-      "data-btn": "jazz",
-    },
+    tagName: "span",
+    classList: [style.wrapperText],
     text: "jazz",
   },
   {
-    tagName: "button",
-    attr: {
-      src: "violin.svg",
-      "data-btn": "classic music",
-    },
-    text: "classic music",
+    tagName: "span",
+    classList: [style.wrapperText],
+    text: "classic",
   },
 ];
