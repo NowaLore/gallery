@@ -1,32 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.listButtons {
+    display: flex;
+    gap: 6px;
+}
+
 .button {
-    background-color: black;
+    background-color: #565831;
+    border-radius: 8px;
+    box-shadow: #8f9250 2px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 129px;
+    justify-content: center;
+    border: #3f4122 2px solid;
 }
 
 .wrapperImage {
-    
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .wrapperText {
-    
+    color: white;
+    font-family: "Zilla Slab", serif;
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    text-transform: capitalize;
 }
 
 .classicIcon {
-
+background-image: url(/violin.svg);
 }
 
 .jazzIcon {
-
+background-image: url(/saxophone.svg);
 }
 
 .rockIcon {
-
+background-image: url(/rock.svg);
 }
 
 .rapIcon {
-
+background-image: url(/rapper.svg);
 }
 
 .hipHopIcon {
-
+background-image: url(/hat.svg);
 }
 

@@ -1,36 +1,32 @@
 import type { ParamsTypes } from "../../../types/types.ts";
+import style from "./buttons.module.css";
+import headerStyle from "./headerStyle.module.css";
+import formStyle from "./formStyle.module.css";
 
 export const headerParams: ParamsTypes = {
   tagName: "header",
-  classList: "header",
-  attr: {
-    id: "header",
-    "data-test": "test",
-  },
-  text: "test",
+  classList: [headerStyle.header],
 };
 
 export const listButtonsParams: ParamsTypes = {
   tagName: "div",
-  classList: "button",
-  attr: {
-    id: "button",
-    "data-test": "test",
-  },
+  classList: [style.listButtons],
 };
 
 export const searchInputParams: ParamsTypes = {
   tagName: "input",
-  classList: "",
+  classList: [formStyle.search],
   attr: { name: "input" },
 };
 
 export const searchFormParams: ParamsTypes = {
   tagName: "form",
+  classList: [formStyle.form],
 };
 
 export const searchSubmitParams: ParamsTypes = {
   tagName: "button",
+  classList: [formStyle.submit],
 };
 
 // export const footerParams: ParamsTypes = {
