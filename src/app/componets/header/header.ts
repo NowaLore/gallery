@@ -1,5 +1,10 @@
 import { Creator } from "../../../utilities/creator";
-import { dataButtons, wrapperImg, wrapperText } from "./data-buttons";
+import {
+  dataButtons,
+  menuBtnParams,
+  wrapperImg,
+  wrapperText,
+} from "./data-buttons";
 import {
   headerParams,
   listButtonsParams,
@@ -12,10 +17,12 @@ export class Header {
   element = new Creator(headerParams);
   form;
   buttons;
+  burger;
   constructor() {
     if (this.element.getElement()) {
       this.buttons = this.createButtons();
       this.form = this.formCreator();
+      this.burger = this.burgerMenu();
     }
   }
 
@@ -57,10 +64,12 @@ export class Header {
     this.element.getElement()?.append(formSearchElement);
     return formSearchElement;
   }
-}
 
-// 1. Сделать список кнопок частью хедера также как и форму
-// 2. В контролере повесить прослушку на список
-// 3. Через событие найти таргет который является кнопкой, если кнопка - получить значение аттрибута
-// 4. Передать значение в getDataFromServer
-// 5. Запустить рендер
+  burgerMenu() {
+    const menuBtn = new Creator(
+      menuBtnParams,
+    ).getElement() as HTMLButtonElement;
+    this.element.getElement().prepend(menuBtn);
+    return menuBtn;
+  }
+}

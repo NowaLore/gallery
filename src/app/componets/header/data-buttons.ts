@@ -38,6 +38,11 @@ export const dataButtons = [
   },
 ];
 
+export const menuBtnParams = {
+  tagName: "button",
+  classList: [],
+};
+
 export const wrapperImg = [
   {
     tagName: "span",

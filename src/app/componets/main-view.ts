@@ -2,29 +2,28 @@ import type { Data, ParamsTypes } from "../../types/types";
 import { Creator } from "../../utilities/creator";
 const mainParams: ParamsTypes = {
   tagName: "main",
-  classList: "main",
+  classList: [],
   attr: {
     id: "main",
     "data-test": "test",
   },
-  text: "test",
 };
 
 const imgListParams: ParamsTypes = {
   tagName: "ul",
-  classList: "img-list",
+  classList: [],
   attr: {},
 };
 
 const imgListItemParams: ParamsTypes = {
   tagName: "li",
-  classList: "item",
+  classList: [],
   attr: {},
 };
 
 const imgParams: ParamsTypes = {
   tagName: "img",
-  classList: "img",
+  classList: [],
   attr: {},
 };
 

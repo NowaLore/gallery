@@ -5,6 +5,12 @@
     gap: 6px;
 }
 
+@media(max-width: 1200px) {
+    .listButtons{
+        display: none;
+    }
+}
+
 .button {
     background-color: #565831;
     border-radius: 8px;
