@@ -23,4 +23,5 @@ export class View {
       this.appContainer.append(this.main.element.element);
     }
   }
+  // Создать метод для переключения класса у бургера
 }

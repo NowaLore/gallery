@@ -1,0 +1,44 @@
+.burger {
+    width: 40px;
+    height: 40px;
+    background-color: #565831;
+    border: #3f4122 2px solid;
+    border-radius: 8px;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.line {
+    display: block;
+    background-color: rgb(218, 218, 218);
+    height: 3px;
+    border-radius: 2px;
+}
+
+.line:first-child {
+    width: 100%;
+}
+
+.line:nth-child(2) {
+    width: 75%;
+}
+
+.line:last-child {
+    width: 50%;
+}
+
+/* .burger.active .line:first-child {
+
+}
+
+.burger.active .line:nth-child(2) {
+
+}
+
+.burger.active .line:last-child {
+
+} */

@@ -1,4 +1,5 @@
 import style from "./buttons.module.css";
+import menuStyle from "./menuStyle.module.css";
 
 export const dataButtons = [
   {
@@ -40,7 +41,12 @@ export const dataButtons = [
 
 export const menuBtnParams = {
   tagName: "button",
-  classList: [],
+  classList: [menuStyle.burger],
+};
+
+export const burgerItems = {
+  tagName: "span",
+  classList: [menuStyle.line],
 };
 
 export const wrapperImg = [

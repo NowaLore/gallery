@@ -1,5 +1,6 @@
 import { Creator } from "../../../utilities/creator";
 import {
+  burgerItems,
   dataButtons,
   menuBtnParams,
   wrapperImg,
@@ -69,6 +70,10 @@ export class Header {
     const menuBtn = new Creator(
       menuBtnParams,
     ).getElement() as HTMLButtonElement;
+    for (let i = 0; i < 3; i++) {
+      const lineElement = new Creator(burgerItems).getElement() as HTMLElement;
+      menuBtn.append(lineElement);
+    }
     this.element.getElement().prepend(menuBtn);
     return menuBtn;
   }

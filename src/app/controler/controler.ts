@@ -13,9 +13,16 @@ export class Controler {
     this.view.header.form?.addEventListener("submit", (e) =>
       this.formHandler(e),
     );
-    this.view.header.buttons?.addEventListener("click", (e) =>
-      this.buttonsHandler(e),
-    );
+
+    this.view.header.element.getElement()?.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement;
+      if (target) {
+        // Создать флаг для проверки бургера
+        // Если прожат то вызывать из хедера метод при включении класса у бургера
+        const isQueryBtn = target.closest("[data-btn]") as HTMLButtonElement;
+        this.buttonsHandler(isQueryBtn);
+      }
+    });
   }
 
   async formHandler(e: Event) {
@@ -26,12 +33,10 @@ export class Controler {
     this.Render(data);
   }
 
-  async buttonsHandler(e: Event) {
-    const target = e.target as HTMLElement;
-    const isButton = target.closest("[data-btn]");
-    if (!isButton) return;
+  async buttonsHandler(btnElement: HTMLButtonElement) {
+    if (!btnElement) return;
 
-    const buttonsData = isButton.getAttribute("data-btn");
+    const buttonsData = btnElement.getAttribute("data-btn");
     if (!buttonsData) return;
 
     const data = await this.model.getDataFromServer(buttonsData);
