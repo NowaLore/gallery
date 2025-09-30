@@ -5,7 +5,6 @@ export class View {
   appContainer;
   header = new Header();
   main = new Main();
-  // footer = new Footer(footerParams).getElement();
   constructor() {
     this.appContainer = this.initRender();
     this.interfaceBuilder();
@@ -23,5 +22,4 @@ export class View {
       this.appContainer.append(this.main.element.element);
     }
   }
-  // Создать метод для переключения класса у бургера
 }

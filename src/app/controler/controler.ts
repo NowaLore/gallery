@@ -17,8 +17,10 @@ export class Controler {
     this.view.header.element.getElement()?.addEventListener("click", (e) => {
       const target = e.target as HTMLElement;
       if (target) {
-        // Создать флаг для проверки бургера
-        // Если прожат то вызывать из хедера метод при включении класса у бургера
+        const isBurgerBtn = target.closest("#burger") as HTMLButtonElement;
+        if (isBurgerBtn) {
+          this.view.header.menuClassToggle();
+        }
         const isQueryBtn = target.closest("[data-btn]") as HTMLButtonElement;
         this.buttonsHandler(isQueryBtn);
       }

@@ -42,6 +42,9 @@ export const dataButtons = [
 export const menuBtnParams = {
   tagName: "button",
   classList: [menuStyle.burger],
+  attr: {
+    id: "burger",
+  },
 };
 
 export const burgerItems = {

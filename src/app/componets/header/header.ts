@@ -14,6 +14,8 @@ import {
   searchSubmitParams,
 } from "./header-params";
 
+import menuStyle from "./menuStyle.module.css";
+
 export class Header {
   element = new Creator(headerParams);
   form;
@@ -76,5 +78,9 @@ export class Header {
     }
     this.element.getElement().prepend(menuBtn);
     return menuBtn;
+  }
+
+  menuClassToggle() {
+    this.burger?.classList.toggle(menuStyle.burgerActive);
   }
 }
