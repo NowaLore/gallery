@@ -39,3 +39,9 @@
     background-repeat: no-repeat;
     background-size: 36px 36px;
 }
+
+@media(max-width: 768px) {
+    .search {
+        width: 200px;
+    }
+}

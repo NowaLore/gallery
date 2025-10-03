@@ -22,7 +22,10 @@ export class Controler {
           this.view.header.menuClassToggle();
         }
         const isQueryBtn = target.closest("[data-btn]") as HTMLButtonElement;
-        this.buttonsHandler(isQueryBtn);
+        if (isQueryBtn) {
+          this.buttonsHandler(isQueryBtn);
+          this.view.header.menuClassToggle();
+        }
       }
     });
   }

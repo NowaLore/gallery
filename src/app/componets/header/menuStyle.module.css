@@ -5,12 +5,19 @@
     border: #3f4122 2px solid;
     border-radius: 8px;
     padding: 3px;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     gap: 4px;
     overflow: hidden;
+    display: none;
+}
+
+@media(max-width: 1200px) {
+    .burger{
+        display: flex;
+        z-index: 20;
+    }
 }
 
 .line {
@@ -47,7 +54,7 @@
 }
 
 .burgerActive .line:last-child {
-width: 100%;
+    width: 100%;
     transform-origin: top right;
     transform: rotate(45deg) translate(1px, 6px);
 }

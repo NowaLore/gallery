@@ -15,6 +15,7 @@ import {
 } from "./header-params";
 
 import menuStyle from "./menuStyle.module.css";
+import style from "./buttons.module.css";
 
 export class Header {
   element = new Creator(headerParams);
@@ -82,5 +83,6 @@ export class Header {
 
   menuClassToggle() {
     this.burger?.classList.toggle(menuStyle.burgerActive);
+    this.buttons?.classList.toggle(style.listButtonsActive);
   }
 }
