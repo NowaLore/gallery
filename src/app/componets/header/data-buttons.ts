@@ -6,35 +6,35 @@ export const dataButtons = [
     tagName: "button",
     classList: [style.button],
     attr: {
-      "data-btn": "hip-hop",
+      "data-btn": "комедия",
     },
   },
   {
     tagName: "button",
     classList: [style.button],
     attr: {
-      "data-btn": "rap",
+      "data-btn": "ужасы",
     },
   },
   {
     tagName: "button",
     classList: [style.button],
     attr: {
-      "data-btn": "rock-music",
+      "data-btn": "боевик",
     },
   },
   {
     tagName: "button",
     classList: [style.button],
     attr: {
-      "data-btn": "jazz",
+      "data-btn": "триллеры",
     },
   },
   {
     tagName: "button",
     classList: [style.button],
     attr: {
-      "data-btn": "classic music",
+      "data-btn": "фантастика",
     },
   },
 ];
@@ -51,54 +51,3 @@ export const burgerItems = {
   tagName: "span",
   classList: [menuStyle.line],
 };
-
-export const wrapperImg = [
-  {
-    tagName: "span",
-    classList: [style.wrapperImage, style.hipHopIcon],
-  },
-  {
-    tagName: "span",
-    classList: [style.wrapperImage, style.rapIcon],
-  },
-  {
-    tagName: "span",
-    classList: [style.wrapperImage, style.rockIcon],
-  },
-  {
-    tagName: "span",
-    classList: [style.wrapperImage, style.jazzIcon],
-  },
-  {
-    tagName: "span",
-    classList: [style.wrapperImage, style.classicIcon],
-  },
-];
-
-export const wrapperText = [
-  {
-    tagName: "span",
-    classList: [style.wrapperText],
-    text: "hip-hop",
-  },
-  {
-    tagName: "span",
-    classList: [style.wrapperText],
-    text: "rap",
-  },
-  {
-    tagName: "span",
-    classList: [style.wrapperText],
-    text: "rock",
-  },
-  {
-    tagName: "span",
-    classList: [style.wrapperText],
-    text: "jazz",
-  },
-  {
-    tagName: "span",
-    classList: [style.wrapperText],
-    text: "classic",
-  },
-];

@@ -1,11 +1,5 @@
 import { Creator } from "../../../utilities/creator";
-import {
-  burgerItems,
-  dataButtons,
-  menuBtnParams,
-  wrapperImg,
-  wrapperText,
-} from "./data-buttons";
+import { burgerItems, dataButtons, menuBtnParams } from "./data-buttons";
 import {
   headerParams,
   listButtonsParams,
@@ -38,13 +32,6 @@ export class Header {
       const currButton = new Creator(
         dataButtons[i],
       ).getElement() as HTMLElement;
-      const wrapperIconElement = new Creator(
-        wrapperImg[i],
-      ).getElement() as HTMLElement;
-      const wrapperTextElement = new Creator(
-        wrapperText[i],
-      ).getElement() as HTMLElement;
-      currButton?.append(wrapperTextElement, wrapperIconElement);
       listButtons.append(currButton);
     }
     if (this.element.getElement()) {
