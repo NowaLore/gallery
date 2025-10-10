@@ -1,5 +1,5 @@
 import { Creator } from "../../../utilities/creator";
-import { burgerItems, menuBtnParams } from "./data-buttons";
+import { burgerItems, btnParams, menuBtnParams } from "./data-buttons";
 import {
   headerParams,
   listButtonsParams,
@@ -28,17 +28,18 @@ export class Header {
     const listButtons = new Creator(
       listButtonsParams,
     ).getElement() as HTMLElement;
-    console.log(listOfGenres);
-    // listOfGenres.forEach(genre => {
 
-    //   btnParams.attr["data-btn"] = genre.name,
-    //   btnParams.text = genre.name
-    //   const genreBtn = new Creator(btnParams);
-    //   listButtons.append(genreBtn);
-    // });
+    listOfGenres.forEach((genre) => {
+      btnParams.attr["data-btn"] = genre.name;
+      btnParams.text = genre.name;
+      const genreBtn = new Creator(btnParams).getElement() as HTMLButtonElement;
+      listButtons.append(genreBtn);
+    });
+
     if (this.element.getElement()) {
       this.element.getElement()!.append(listButtons);
     }
+
     return listButtons;
   }
 
