@@ -1,43 +1,14 @@
-import style from "./buttons.module.css";
+// import style from "./buttons.module.css";
 import menuStyle from "./menuStyle.module.css";
 
-export const dataButtons = [
-  {
-    tagName: "button",
-    classList: [style.button],
-    attr: {
-      "data-btn": "комедия",
-    },
-  },
-  {
-    tagName: "button",
-    classList: [style.button],
-    attr: {
-      "data-btn": "ужасы",
-    },
-  },
-  {
-    tagName: "button",
-    classList: [style.button],
-    attr: {
-      "data-btn": "боевик",
-    },
-  },
-  {
-    tagName: "button",
-    classList: [style.button],
-    attr: {
-      "data-btn": "триллеры",
-    },
-  },
-  {
-    tagName: "button",
-    classList: [style.button],
-    attr: {
-      "data-btn": "фантастика",
-    },
-  },
-];
+// export const btnParams = {
+//   tagName: "button",
+//   classList: [style.button],
+//   attr: {
+//     "data-btn": "",
+//   },
+//   text: "",
+// }
 
 export const menuBtnParams = {
   tagName: "button",

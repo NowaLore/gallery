@@ -3,9 +3,11 @@ import { Main } from "../componets/main-view";
 
 export class View {
   appContainer;
-  header = new Header();
-  main = new Main();
-  constructor() {
+  header;
+  main;
+  constructor(listOfGenres) {
+    this.header = new Header(listOfGenres);
+    this.main = new Main();
     this.appContainer = this.initRender();
     this.interfaceBuilder();
   }

@@ -1,6 +1,11 @@
 export class Model {
-  // #genresEndPoint = 'https://api.kinopoisk.dev/v1/movie/possible-values-by-field?field=genres.name'
-  constructor() {}
+  listOfGenres;
+  #baseUrl = "https://api.kinopoisk.dev/";
+  #genresEndPoint = "v1/movie/possible-values-by-field?field=genres.name";
+  constructor() {
+    this.listOfGenres = this.getDataForGenres(this.#genresEndPoint);
+    console.log(this.listOfGenres);
+  }
 
   async getDataFromServer(query: string) {
     const response = await fetch(
@@ -18,7 +23,7 @@ export class Model {
         "X-API-KEY": "QT6FNHV-J4S4XPA-N6FHQS0-RW3GWBY",
       },
     };
-    const response = await fetch(endPoint, options);
+    const response = await fetch(`${this.#baseUrl}${endPoint}`, options);
     const data = await response.json();
     return data;
   }

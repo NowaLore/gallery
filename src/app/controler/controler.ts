@@ -4,7 +4,7 @@ import { View } from "../view/view";
 
 export class Controler {
   model = new Model();
-  view = new View();
+  view = new View(this.model.listOfGenres);
   constructor() {
     this.setListeners();
   }
