@@ -2,13 +2,22 @@ import type { Data } from "../../types/types";
 import { Model } from "../model/model";
 import { View } from "../view/view";
 
+// ==========================================
 export class Controler {
   model = new Model();
-  view = new View(this.model.listOfGenres);
+  view;
+
   constructor() {
-    this.setListeners();
+    this.init();
   }
 
+  // жду данных от модели и только потом инициализирую view
+  async init() {
+    const genres = await this.model.listOfGenres;
+    this.view = new View(genres);
+    this.setListeners();
+  }
+  // ==================================================
   setListeners() {
     this.view.header.form?.addEventListener("submit", (e) =>
       this.formHandler(e),
