@@ -1,14 +1,14 @@
-// import style from "./buttons.module.css";
+import style from "./buttons.module.css";
 import menuStyle from "./menuStyle.module.css";
 
-// export const btnParams = {
-//   tagName: "button",
-//   classList: [style.button],
-//   attr: {
-//     "data-btn": "",
-//   },
-//   text: "",
-// }
+export const btnParams = {
+  tagName: "button",
+  classList: [style.button],
+  attr: {
+    "data-btn": "",
+  },
+  text: "",
+};
 
 export const menuBtnParams = {
   tagName: "button",
