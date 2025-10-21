@@ -49,24 +49,36 @@
     pointer-events: all;
 }
 @media(max-width: 1200px) {
-    .listButtons{
+    .shadowWrapper{
         position: fixed;
         top: 0;
         left: 0;
         flex-direction: column;
         justify-content: center;
         height: 100vh;
-        gap: 35px;
-        padding: 0 40px;
+        padding: 100px 40px 40px;
         background-color: #1c291ca2;
         backdrop-filter: blur(4px);
         transform: translateX(-100%);
         transition: 0.5s;
     }
 
-    .listButtonsActive {
+    .shadowWrapper::before, .shadowWrapper::after {
+        display: none;
+    }
+
+    .shadowWrapperActive {
         transform: translateX(0);
         border-radius: 0 12px 12px 0;
+    }
+
+    .listButtons {
+        flex-direction: column;
+        gap: 35px;
+    }
+    
+    .button {
+        min-width: 200px;
     }
 }
 

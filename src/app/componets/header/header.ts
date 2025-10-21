@@ -80,6 +80,6 @@ export class Header {
 
   menuClassToggle() {
     this.burger?.classList.toggle(menuStyle.burgerActive);
-    this.buttons?.classList.toggle(style.listButtonsActive);
+    this.buttons?.classList.toggle(style.shadowWrapperActive);
   }
 }
