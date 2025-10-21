@@ -29,6 +29,11 @@ export const searchSubmitParams: ParamsTypes = {
   classList: [formStyle.submit],
 };
 
+export const shadowWrapperParams = {
+  tagName: "div",
+  classList: [style.shadowWrapper],
+};
+
 // export const footerParams: ParamsTypes = {
 //   tagName: "footer",
 //   classList: "footer",

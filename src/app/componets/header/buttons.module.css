@@ -6,7 +6,6 @@
     max-width: 810px;
     overflow: auto;
     padding-bottom: 10px;
-    position: relative;
 }
 
 .listButtons::-webkit-scrollbar {
@@ -17,22 +16,38 @@
     border-radius: 10px;
 }
 .listButtons::-webkit-scrollbar-thumb {
-  background-color: rgb(196, 187, 187);    /* цвет плашки */
+    background-color: rgb(196, 187, 187);    /* цвет плашки */
     border-radius: 20px;       /* закругления плашки */
     border: 3px solid #4d502a;
 }
 
-.listButtons::before {
+.shadowWrapper {
+    position: relative;
+}
+
+.shadowWrapper::before {
     content: "";
     display: block;
     height: 35px;
-    width: 40px;
+    width: 155px;
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(99deg,rgba(19, 29, 19, 1) 10%, rgba(86, 88, 49, 0.2) 28%);
+    background: linear-gradient(90deg,rgba(19, 29, 19, 0.98) 24%, rgba(86, 88, 49, 0.11) 47%);
+    pointer-events: all;
 }
 
+.shadowWrapper::after {
+    content: "";
+    display: block;
+    height: 35px;
+    width: 155px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(-90deg,rgba(19, 29, 19, 0.98) 24%, rgba(86, 88, 49, 0.11) 47%);
+    pointer-events: all;
+}
 @media(max-width: 1200px) {
     .listButtons{
         position: fixed;

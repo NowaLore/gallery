@@ -6,6 +6,7 @@ import {
   searchFormParams,
   searchInputParams,
   searchSubmitParams,
+  shadowWrapperParams,
 } from "./header-params";
 
 import menuStyle from "./menuStyle.module.css";
@@ -29,6 +30,12 @@ export class Header {
       listButtonsParams,
     ).getElement() as HTMLElement;
 
+    const shadowWrapper = new Creator(
+      shadowWrapperParams,
+    ).getElement() as HTMLElement;
+
+    shadowWrapper.append(listButtons);
+
     listOfGenres.forEach((genre) => {
       btnParams.attr["data-btn"] = genre.name;
       btnParams.text = genre.name;
@@ -37,10 +44,10 @@ export class Header {
     });
 
     if (this.element.getElement()) {
-      this.element.getElement()!.append(listButtons);
+      this.element.getElement()!.append(shadowWrapper);
     }
 
-    return listButtons;
+    return shadowWrapper;
   }
 
   formCreator() {
