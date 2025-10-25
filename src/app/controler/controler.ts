@@ -53,8 +53,20 @@ export class Controler {
     const buttonsData = btnElement.getAttribute("data-btn");
     if (!buttonsData) return;
 
-    const data = await this.model.getDataFromServer(buttonsData);
-    this.Render(data);
+    const dataParams = {
+      version: "1.4",
+      chapter: "movie",
+      path: "",
+      params: {
+        page: 1,
+        limit: 10,
+        "genres.name": buttonsData,
+      },
+    };
+
+    const data = await this.model.getData(dataParams);
+    // this.Render(data);
+    console.log(data);
   }
 
   Render(data: Data) {
