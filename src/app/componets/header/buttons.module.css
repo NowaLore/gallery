@@ -48,6 +48,27 @@
     background: linear-gradient(-90deg,rgba(19, 29, 19, 0.98) 24%, rgba(86, 88, 49, 0.11) 47%);
     pointer-events: all;
 }
+
+
+.button {
+    background-color: #565831;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 160px;
+    width: max-content;
+    justify-content: center;
+    border: #3f4122 2px solid;
+    color: white;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding: 6px 4px;
+    flex-shrink: 0;
+}
+
 @media(max-width: 1200px) {
     .shadowWrapper{
         position: fixed;
@@ -75,30 +96,28 @@
     .listButtons {
         flex-direction: column;
         gap: 35px;
+        height: 80vh;
+        padding-bottom: 0;
+        padding-right: 8px;
     }
-    
+
+    .listButtons::-webkit-scrollbar {
+        width: 12px;
+    }
+    .listButtons::-webkit-scrollbar-track {
+        background: #444625;
+        border-radius: 10px;
+    }
+    .listButtons::-webkit-scrollbar-thumb {
+        background-color: rgb(196, 187, 187);    /* цвет плашки */
+        border-radius: 20px;       /* закругления плашки */
+        border: 3px solid #4d502a;
+    }
+
     .button {
         min-width: 200px;
+        padding: 12px 8px ;
     }
-}
-
-.button {
-    background-color: #565831;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    min-width: 160px;
-    width: max-content;
-    justify-content: center;
-    border: #3f4122 2px solid;
-    color: white;
-    font-family: "Comfortaa", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    text-transform: capitalize;
-    padding: 6px 4px;
-    flex-shrink: 0;
 }
 
 @media(max-width: 500px) {
