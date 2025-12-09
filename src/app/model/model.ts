@@ -17,7 +17,7 @@ export class Model {
     path = "", // например "search" или "possible-values-by-field"
     params = {}, // страницы, количество items и д.р.
   } = {}) {
-    const baseURL = "https://api.kinopoisk.dev";
+    const baseURL = "https://api.poiskkino.dev";
 
     const url = new URL(
       `${baseURL}/v${version}/${chapter}${path ? `/${path}` : ""}`,
@@ -44,7 +44,6 @@ export class Model {
       }
 
       const data = await response.json();
-      console.log("Ответ:", data);
       return data;
     } catch (error) {
       console.error("Ошибка при получении данных:", error);

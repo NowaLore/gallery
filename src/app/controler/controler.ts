@@ -65,8 +65,8 @@ export class Controler {
     };
 
     const data = await this.model.getData(dataParams);
-    // this.Render(data);
     console.log(data);
+    this.Render(data);
   }
 
   Render(data: Data) {

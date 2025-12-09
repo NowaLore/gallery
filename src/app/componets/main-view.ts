@@ -34,14 +34,20 @@ export class Main {
     this.element.getElement()?.append(this.imgList as HTMLUListElement);
   }
   imagesList(data: Data) {
+    console.log(data);
+
     const template = new DocumentFragment();
-    for (let i = 0; i < data.results.length; i++) {
-      console.log(data);
+    // Переписать на for each
+    for (let i = 0; i < data.docs.length; i++) {
       const item = new Creator(imgListItemParams).getElement() as HTMLLIElement;
       const image: HTMLImageElement = new Creator(
         imgParams,
       ).getElement() as HTMLImageElement;
-      image.src = data.results[i].urls.regular;
+      if (data.docs[i].poster && data.docs[i].poster.previewUrl) {
+        image.src = data.docs[i].poster.previewUrl;
+      } else {
+        image.src = "/public/EyeSlashed.svg";
+      }
       item?.append(image);
       template.append(item);
     }
