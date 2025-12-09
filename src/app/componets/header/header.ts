@@ -37,6 +37,10 @@ export class Header {
     shadowWrapper.append(listButtons);
 
     listOfGenres.forEach((genre) => {
+      if (genre.name.toLowerCase() === "для взрослых") {
+        return;
+      }
+      console.log(genre);
       btnParams.attr["data-btn"] = genre.name;
       btnParams.text = genre.name;
       const genreBtn = new Creator(btnParams).getElement() as HTMLButtonElement;
