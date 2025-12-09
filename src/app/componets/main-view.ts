@@ -38,19 +38,32 @@ export class Main {
 
     const template = new DocumentFragment();
     // Переписать на for each
-    for (let i = 0; i < data.docs.length; i++) {
+    // for (let i = 0; i < data.docs.length; i++) {
+    // const item = new Creator(imgListItemParams).getElement() as HTMLLIElement;
+    // const image: HTMLImageElement = new Creator(
+    //   imgParams,
+    // ).getElement() as HTMLImageElement;
+    // if (data.docs[i].poster && data.docs[i].poster.previewUrl) {
+    //   image.src = data.docs[i].poster.previewUrl;
+    // } else {
+    //   image.src = "/public/EyeSlashed.svg";
+    // }
+    // item?.append(image);
+    // template.append(item);
+    // }
+    data.docs.forEach((element) => {
       const item = new Creator(imgListItemParams).getElement() as HTMLLIElement;
       const image: HTMLImageElement = new Creator(
         imgParams,
       ).getElement() as HTMLImageElement;
-      if (data.docs[i].poster && data.docs[i].poster.previewUrl) {
-        image.src = data.docs[i].poster.previewUrl;
+      if (element.poster && element.poster.previewUrl) {
+        image.src = element.poster.previewUrl;
       } else {
         image.src = "/public/EyeSlashed.svg";
       }
       item?.append(image);
       template.append(item);
-    }
+    });
     this.imgList?.append(template);
   }
 
