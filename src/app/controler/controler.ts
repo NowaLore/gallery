@@ -44,12 +44,11 @@ export class Controler {
     const currFormElement = e.target as HTMLFormElement;
     const userInput = new FormData(currFormElement).get("input") as string;
     const data = await this.model.getDataFromServer(userInput);
-    this.Render(data);
+    this.render(data);
   }
 
   async buttonsHandler(btnElement: HTMLButtonElement) {
     if (!btnElement) return;
-
     const buttonsData = btnElement.getAttribute("data-btn");
     if (!buttonsData) return;
 
@@ -66,11 +65,11 @@ export class Controler {
 
     const data = await this.model.getData(dataParams);
     console.log(data);
-    this.Render(data);
+    this.render(data);
   }
 
-  Render(data: Data) {
+  render(data: Data) {
     this.view.main.clearRender();
-    this.view.main.imagesList(data);
+    this.view.main.cardsList(data);
   }
 }

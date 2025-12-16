@@ -40,7 +40,6 @@ export class Header {
       if (genre.name.toLowerCase() === "для взрослых") {
         return;
       }
-      console.log(genre);
       btnParams.attr["data-btn"] = genre.name;
       btnParams.text = genre.name;
       const genreBtn = new Creator(btnParams).getElement() as HTMLButtonElement;
