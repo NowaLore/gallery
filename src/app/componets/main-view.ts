@@ -69,7 +69,7 @@ const nameContainerParams = {
   attr: {},
 };
 
-const lenghtParams = {
+const lengthParams = {
   tagName: "div",
   classList: [],
   attr: {},
@@ -91,6 +91,7 @@ const tagParams = {
   tagName: "span",
   classList: [],
   attr: {},
+  text: "",
 };
 
 const imgParams: ParamsTypes = {
@@ -131,14 +132,13 @@ export class Main {
       const nameContainer = new Creator(
         nameContainerParams,
       ).getElement() as HTMLElement;
-      const lenght = new Creator(lenghtParams).getElement() as HTMLElement;
+      const length = new Creator(lengthParams).getElement() as HTMLElement;
       const createdYear = new Creator(
         createdYearParams,
       ).getElement() as HTMLElement;
       const tagsContainer = new Creator(
         tagsContainerParams,
       ).getElement() as HTMLElement;
-      const tags = new Creator(tagParams).getElement() as HTMLElement;
 
       if (element.poster && element.poster.previewUrl) {
         image.src = element.poster.previewUrl;
@@ -163,13 +163,36 @@ export class Main {
         starContainerParams,
       ).getElement() as HTMLElement;
 
+      if (!element.name && !element.alternativeName) {
+        nameContainer.innerText = "неизвестно";
+      } else if (element.name) {
+        nameContainer.innerText = element.name;
+      } else if (element.alternativeName) {
+        nameContainer.innerText = element.alternativeName;
+      }
+
+      if (element.movieLength) {
+        const hours = Math.floor(element.movieLength / 60);
+        const minutes = element.movieLength % 60;
+        length.innerText = `длительность: ${hours}ч. ${minutes}мин.`;
+      } else {
+        length.innerText = `длительность: неизвестна`;
+      }
+
+      if (element.genres) {
+        element.genres.forEach((element) => {
+          tagParams.text = element.name;
+          const tags = new Creator(tagParams).getElement() as HTMLElement;
+          tagsContainer.append(tags);
+        });
+      }
+
       item?.append(image, rateContainer, infoContainer);
       rateWrapper.append(imdbRate, starContainer);
       rateContainer.append(ageRate, rateWrapper);
 
       infoContainer.append(topContainer, createdYear, tagsContainer);
-      topContainer.append(nameContainer, lenght);
-      tagsContainer.append(tags);
+      topContainer.append(nameContainer, length);
       template.append(item);
     });
     this.imgList?.append(template);
