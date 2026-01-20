@@ -58,7 +58,7 @@ export class Controler {
       path: "",
       params: {
         page: 1,
-        limit: 10,
+        limit: 12,
         "genres.name": buttonsData,
       },
     };
