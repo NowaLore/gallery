@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap');
+.imgList {
+display: flex;
+gap: 35px;
+flex-wrap: wrap;
+}
+
+.imgListItem {
+    width: 350px;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.imgListItem:hover .img {
+    transform: scale(1.1);
+}
+
+.rateContainer {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgba(46, 45, 45, 0.199);
+    backdrop-filter: blur(5px);
+    width: 96%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+    border-radius: 6px;
+
+}
+
+.ageRate {
+color: rgb(235, 235, 235);
+font-family: "Roboto Mono", monospace;
+font-size: 14px;
+font-weight: 400;
+}
+
+.rateWrapper {
+display: flex;
+gap: 6px;
+}
+
+.imdbRate {
+color: rgb(235, 235, 235);
+font-family: "Roboto Mono", monospace;
+font-size: 14px;
+font-weight: 400;
+}
+
+.starContainer {
+    width: 20px;
+    height: 20px;
+}
+
+.infoContainer {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgba(46, 45, 45, 0.199);
+    backdrop-filter: blur(5px);
+    width: 96%;
+    border-radius: 6px;
+    padding: 15px 10px;
+}
+
+.topContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nameContainer {
+    text-align: center;
+    color: rgb(235, 235, 235);
+    font-family: "Roboto Mono", monospace;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.length {
+color: rgb(235, 235, 235);
+font-family: "Roboto Mono", monospace;
+font-size: 12px;
+font-weight: 400;
+}
+
+.createdYear {
+color: rgb(235, 235, 235);
+font-family: "Roboto Mono", monospace;
+font-size: 12px;
+font-weight: 400;
+}
+
+.tagsContainer {
+color: rgb(235, 235, 235);
+font-family: "Roboto Mono", monospace;
+font-size: 12px;
+font-weight: 400;
+}
+
+.tag {
+
+}
+
+.img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s
+}

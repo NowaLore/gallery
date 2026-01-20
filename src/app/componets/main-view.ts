@@ -1,103 +1,30 @@
-import type { Data, ParamsTypes } from "../../types/types";
+import type { Data } from "../../types/types";
 import { Creator } from "../../utilities/creator";
-const mainParams: ParamsTypes = {
+import {
+  imgListItemParams,
+  imgListParams,
+  rateContainerParams,
+  ageRateParams,
+  rateWrapperParams,
+  imdbRateParams,
+  starContainerParams,
+  infoContainerParams,
+  topContainerParams,
+  nameContainerParams,
+  lengthParams,
+  createdYearParams,
+  tagsContainerParams,
+  tagParams,
+  imgParams,
+} from "./cards/cards-params";
+
+const mainParams = {
   tagName: "main",
   classList: [],
   attr: {
     id: "main",
     "data-test": "test",
   },
-};
-
-const imgListParams: ParamsTypes = {
-  tagName: "ul",
-  classList: [],
-  attr: {},
-};
-
-const imgListItemParams: ParamsTypes = {
-  tagName: "li",
-  classList: [],
-  attr: {},
-};
-
-const rateContainerParams = {
-  tagName: "div",
-  classList: [],
-  attr: {},
-};
-
-const ageRateParams = {
-  tagName: "div",
-  classList: [],
-  attr: {},
-};
-
-const rateWrapperParams = {
-  tagName: "div",
-  classList: [],
-  attr: {},
-};
-
-const imdbRateParams = {
-  tagName: "div",
-  classList: [],
-  attr: {},
-};
-
-const starContainerParams = {
-  tagName: "img",
-  classList: ["object-cover", "w-2", "h-2"],
-  attr: { src: "" },
-};
-
-const infoContainerParams = {
-  tagName: "div",
-  classList: [],
-  attr: {},
-};
-
-const topContainerParams = {
-  tagName: "div",
-  classList: [],
-  attr: {},
-};
-
-const nameContainerParams = {
-  tagName: "div",
-  classList: [],
-  attr: {},
-};
-
-const lengthParams = {
-  tagName: "div",
-  classList: [],
-  attr: {},
-};
-
-const createdYearParams = {
-  tagName: "div",
-  classList: [],
-  attr: {},
-};
-
-const tagsContainerParams = {
-  tagName: "div",
-  classList: [],
-  attr: {},
-};
-
-const tagParams = {
-  tagName: "span",
-  classList: [],
-  attr: {},
-  text: "",
-};
-
-const imgParams: ParamsTypes = {
-  tagName: "img",
-  classList: [],
-  attr: {},
 };
 
 export class Main {
@@ -181,18 +108,24 @@ export class Main {
 
       if (element.genres) {
         element.genres.forEach((element) => {
-          tagParams.text = element.name;
+          tagParams.text = `#${element.name} `;
           const tags = new Creator(tagParams).getElement() as HTMLElement;
           tagsContainer.append(tags);
         });
+      }
+
+      if (element.year) {
+        createdYear.innerText = `год: ${element.year}`;
+      } else {
+        createdYear.innerText = "год: ?";
       }
 
       item?.append(image, rateContainer, infoContainer);
       rateWrapper.append(imdbRate, starContainer);
       rateContainer.append(ageRate, rateWrapper);
 
-      infoContainer.append(topContainer, createdYear, tagsContainer);
-      topContainer.append(nameContainer, length);
+      infoContainer.append(nameContainer, topContainer, tagsContainer);
+      topContainer.append(length, createdYear);
       template.append(item);
     });
     this.imgList?.append(template);
