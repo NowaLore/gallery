@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap');
 .imgList {
+    margin: 0 auto;
 display: grid;
 gap: 35px;
 grid-template-columns: repeat(3, minmax(350px, 400px));
