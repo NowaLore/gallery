@@ -18,6 +18,8 @@ import {
   imgParams,
 } from "./cards/cards-params";
 
+import style from "./cards/cards.module.css";
+
 const mainParams = {
   tagName: "main",
   classList: [],
@@ -39,9 +41,6 @@ export class Main {
     const template = new DocumentFragment();
     data.docs.forEach((element) => {
       const item = new Creator(imgListItemParams).getElement() as HTMLLIElement;
-      const image: HTMLImageElement = new Creator(
-        imgParams,
-      ).getElement() as HTMLImageElement;
       const rateContainer = new Creator(
         rateContainerParams,
       ).getElement() as HTMLElement;
@@ -67,9 +66,17 @@ export class Main {
         tagsContainerParams,
       ).getElement() as HTMLElement;
 
+      let image = null;
+
       if (element.poster && element.poster.previewUrl) {
+        imgParams.classList.length = 0;
+        imgParams.classList.push(style.img);
+
+        image = new Creator(imgParams).getElement() as HTMLImageElement;
         image.src = element.poster.previewUrl;
       } else {
+        imgParams.classList.push(style.imgSmall);
+        image = new Creator(imgParams).getElement() as HTMLImageElement;
         image.src = "/public/EyeSlashed.svg";
       }
 

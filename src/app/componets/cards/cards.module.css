@@ -12,10 +12,12 @@ justify-content: center;
     position: relative;
     overflow: hidden;
     border-radius: 12px;
+    background-color: #5554549f;
+    backdrop-filter: blur(4px);
 }
 
 .imgListItem:hover .img {
-    transform: scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .rateContainer {
@@ -109,10 +111,22 @@ font-weight: 400;
 
 .img {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: 0.5s
+}
+
+.imgSmall {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    transition: 0.5s;
 }
