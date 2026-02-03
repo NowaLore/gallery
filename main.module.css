@@ -30,3 +30,8 @@ background-image: url("/bg-img.svg");
   margin: 0 auto;
   padding: 0 2rem;
 }
+
+ol,ul,li {
+  padding: 0;
+  margin: 0;
+}

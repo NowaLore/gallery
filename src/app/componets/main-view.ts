@@ -19,6 +19,7 @@ import {
 } from "./cards/cards-params";
 
 import style from "./cards/cards.module.css";
+import mainStyle from "./cards/cards.module.css";
 
 const mainParams = {
   tagName: "main",
@@ -29,11 +30,21 @@ const mainParams = {
   },
 };
 
+const containerParams = {
+  tagName: "div",
+  classList: [mainStyle.container],
+  attr: {
+    id: "container",
+  },
+};
+
 export class Main {
+  container = new Creator(containerParams).getElement();
   element = new Creator(mainParams);
   imgList = new Creator(imgListParams).getElement();
   constructor() {
-    this.element.getElement()?.append(this.imgList as HTMLUListElement);
+    this.element.getElement()?.append(this.container as HTMLDivElement);
+    this.container?.append(this.imgList as HTMLUListElement);
   }
   cardsList(data: Data) {
     console.log(data);

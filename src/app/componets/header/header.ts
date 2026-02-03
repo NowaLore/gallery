@@ -1,6 +1,7 @@
 import { Creator } from "../../../utilities/creator";
 import { burgerItems, btnParams, menuBtnParams } from "./data-buttons";
 import {
+  headerContainerParams,
   headerParams,
   listButtonsParams,
   searchFormParams,
@@ -13,12 +14,14 @@ import menuStyle from "./menuStyle.module.css";
 import style from "./buttons.module.css";
 
 export class Header {
+  container = new Creator(headerContainerParams);
   element = new Creator(headerParams);
   form;
   buttons;
   burger;
   constructor(listOfGenres) {
     if (this.element.getElement()) {
+      this.container.getElement()?.append(this.buttons as HTMLButtonElement);
       this.buttons = this.createButtons(listOfGenres);
       this.form = this.formCreator();
       this.burger = this.burgerMenu();

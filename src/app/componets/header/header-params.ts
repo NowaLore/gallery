@@ -34,6 +34,14 @@ export const shadowWrapperParams = {
   classList: [style.shadowWrapper],
 };
 
+export const headerContainerParams = {
+  tagName: "div",
+  classList: [style.container],
+  attr: {
+    id: "container",
+  },
+};
+
 // export const footerParams: ParamsTypes = {
 //   tagName: "footer",
 //   classList: "footer",
