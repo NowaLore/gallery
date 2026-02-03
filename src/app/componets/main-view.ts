@@ -51,6 +51,7 @@ export class Main {
 
     const template = new DocumentFragment();
     data.docs.forEach((element) => {
+      imgListItemParams.attr["data-id"] = element.id;
       const item = new Creator(imgListItemParams).getElement() as HTMLLIElement;
       const rateContainer = new Creator(
         rateContainerParams,
@@ -152,6 +153,12 @@ export class Main {
   clearRender() {
     if (this.imgList) {
       this.imgList.innerHTML = "";
+    }
+  }
+
+  clearList() {
+    if (this.imgList) {
+      this.imgList.remove();
     }
   }
 }

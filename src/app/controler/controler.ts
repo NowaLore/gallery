@@ -37,6 +37,14 @@ export class Controler {
         }
       }
     });
+
+    this.view.main.element.getElement().addEventListener("click", (e) => {
+      const isCard = e.target.closest("[data-id]");
+
+      if (isCard) {
+        this.view.main.clearList();
+      }
+    });
   }
 
   async formHandler(e: Event) {

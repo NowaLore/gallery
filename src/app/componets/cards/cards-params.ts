@@ -9,7 +9,9 @@ const imgListParams = {
 const imgListItemParams = {
   tagName: "li",
   classList: [style.imgListItem],
-  attr: {},
+  attr: {
+    "data-id": "",
+  },
 };
 
 const rateContainerParams = {
