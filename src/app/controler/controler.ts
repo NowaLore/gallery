@@ -38,11 +38,19 @@ export class Controler {
       }
     });
 
-    this.view.main.element.getElement().addEventListener("click", (e) => {
+    this.view.main.element.getElement().addEventListener("click", async (e) => {
       const isCard = e.target.closest("[data-id]");
+      const filmID = isCard.getAttribute("data-id");
+      const idResponse = await this.model.getData({
+        version: "1.4",
+        chapter: "movie",
+        path: filmID,
+      });
+      console.log(idResponse);
 
       if (isCard) {
         this.view.main.clearList();
+        this.view.main.previewCreator();
       }
     });
   }
@@ -51,7 +59,12 @@ export class Controler {
     e.preventDefault();
     const currFormElement = e.target as HTMLFormElement;
     const userInput = new FormData(currFormElement).get("input") as string;
-    const data = await this.model.getDataFromServer(userInput);
+    const data = await this.model.getData({
+      version: "1.4",
+      chapter: "movie",
+      path: "search",
+      params: { query: userInput },
+    });
     this.render(data);
   }
 

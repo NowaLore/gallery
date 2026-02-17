@@ -20,6 +20,7 @@ import {
 
 import style from "./cards/cards.module.css";
 import mainStyle from "./cards/cards.module.css";
+import { Preview } from "./preview/preview";
 
 const mainParams = {
   tagName: "main",
@@ -42,9 +43,11 @@ export class Main {
   container = new Creator(containerParams).getElement();
   element = new Creator(mainParams);
   imgList = new Creator(imgListParams).getElement();
+  preview;
   constructor() {
     this.element.getElement()?.append(this.container as HTMLDivElement);
     this.container?.append(this.imgList as HTMLUListElement);
+    this.preview = new Preview();
   }
   cardsList(data: Data) {
     console.log(data);
@@ -77,7 +80,6 @@ export class Main {
       const tagsContainer = new Creator(
         tagsContainerParams,
       ).getElement() as HTMLElement;
-
       let image = null;
 
       if (element.poster && element.poster.previewUrl) {
@@ -148,6 +150,12 @@ export class Main {
       template.append(item);
     });
     this.imgList?.append(template);
+  }
+
+  previewCreator() {
+    // const preview = new Creator(previewParams).getElement() as HTMLElement;
+    // const previewElement = this.preview.getPreview();
+    // this.container?.append(previewElement);
   }
 
   clearRender() {
