@@ -152,10 +152,10 @@ export class Main {
     this.imgList?.append(template);
   }
 
-  previewCreator() {
-    // const preview = new Creator(previewParams).getElement() as HTMLElement;
-    // const previewElement = this.preview.getPreview();
-    // this.container?.append(previewElement);
+  previewCreator(data) {
+    this.preview.setData(data);
+    const previewElement = this.preview.getPreview() as HTMLElement;
+    this.container?.append(previewElement);
   }
 
   clearRender() {

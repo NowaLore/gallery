@@ -46,11 +46,11 @@ export class Controler {
         chapter: "movie",
         path: filmID,
       });
-      console.log(idResponse);
+      this.model.setData(idResponse);
 
       if (isCard) {
         this.view.main.clearList();
-        this.view.main.previewCreator();
+        this.view.main.previewCreator(this.model.getModelData());
       }
     });
   }
@@ -65,7 +65,9 @@ export class Controler {
       path: "search",
       params: { query: userInput },
     });
-    this.render(data);
+    this.model.setData(data);
+
+    this.render(this.model.getModelData());
   }
 
   async buttonsHandler(btnElement: HTMLButtonElement) {
@@ -85,8 +87,8 @@ export class Controler {
     };
 
     const data = await this.model.getData(dataParams);
-    console.log(data);
-    this.render(data);
+    this.model.setData(data);
+    this.render(this.model.getModelData());
   }
 
   render(data: Data) {

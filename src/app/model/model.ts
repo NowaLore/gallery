@@ -1,5 +1,6 @@
 export class Model {
   listOfGenres;
+  data;
   constructor() {
     this.listOfGenres = this.getData({
       version: "1",
@@ -9,6 +10,7 @@ export class Model {
         field: "genres.name",
       },
     });
+    this.data = null;
   }
 
   async getData({
@@ -49,5 +51,12 @@ export class Model {
       console.error("Ошибка при получении данных:", error);
       return null;
     }
+  }
+
+  setData(data) {
+    this.data = data;
+  }
+  getModelData() {
+    return this.data;
   }
 }
