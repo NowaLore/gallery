@@ -11,8 +11,8 @@ import {
   typeParams,
   yearParams,
   timeParams,
-  previewTagsParams,
-  tagsItemParams,
+  // previewTagsParams,
+  // tagsItemParams,
   rateConteinerParams,
   previewImdbParams,
   previewAgeParams,
@@ -30,13 +30,16 @@ export class Preview {
     return this.preview;
   }
 
-  builder() {
-    const header = this.headerCreator();
+  builder(data) {
+    const header = this.headerCreator(data);
     this.preview?.append(header);
+    console.log(header);
+    console.log(data);
   }
 
-  headerCreator() {
-    //Создать на основе this.data хедер
+  headerCreator(data) {
+    console.log(data);
+
     const headerElement = new Creator(headerParams).getElement() as HTMLElement;
     const posterWrapper = new Creator(
       posterWrapperParams,
@@ -48,17 +51,35 @@ export class Preview {
     const nameWrapper = new Creator(
       nameWrapperParams,
     ).getElement() as HTMLElement;
+
+    if (data.name) {
+      filmNameParams.text = data.name;
+    }
+
     const filmName = new Creator(filmNameParams).getElement() as HTMLElement;
     const infoContainer = new Creator(
       infoContainerParams,
     ).getElement() as HTMLElement;
+    if (data.type) {
+      typeParams.text = data.type;
+    }
     const type = new Creator(typeParams).getElement() as HTMLElement;
+    if (data.year) {
+      yearParams.text = data.year;
+    }
     const year = new Creator(yearParams).getElement() as HTMLElement;
+    if (data.movieLength) {
+      timeParams.text = data.movieLength;
+    }
     const time = new Creator(timeParams).getElement() as HTMLElement;
-    const previewTags = new Creator(
-      previewTagsParams,
-    ).getElement() as HTMLElement;
-    const tagsItem = new Creator(tagsItemParams).getElement() as HTMLElement;
+
+    // const previewTags = new Creator(
+    //   previewTagsParams,
+    // ).getElement() as HTMLElement;
+    // data.genres.forEach( () => {
+    //   // const tagsItem = new Creator(tagsItemParams).getElement() as HTMLElement;
+    // });
+
     const rateContainer = new Creator(
       rateConteinerParams,
     ).getElement() as HTMLElement;
@@ -73,18 +94,15 @@ export class Preview {
     heroContainer.append(
       nameWrapper,
       infoContainer,
-      previewTags,
+      // previewTags,
       rateContainer,
     );
     nameWrapper.append(filmName);
     infoContainer.append(type, year, time);
-    previewTags.append(tagsItem);
+    // previewTags.append(tagsItem);
     rateContainer.append(previewImdb, previewAge);
-    return headerElement;
-  }
 
-  setData(data) {
-    this.data = data;
-    console.log(this.data);
+    posterImg.src = data.poster.previewUrl;
+    return headerElement;
   }
 }

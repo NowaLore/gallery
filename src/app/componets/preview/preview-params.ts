@@ -53,18 +53,21 @@ export const typeParams = {
   tagName: "span",
   classList: [],
   attr: {},
+  text: "",
 };
 
 export const yearParams = {
   tagName: "span",
   classList: [],
   attr: {},
+  text: "",
 };
 
 export const timeParams = {
   tagName: "span",
   classList: [],
   attr: {},
+  text: "",
 };
 
 export const previewTagsParams = {

@@ -50,8 +50,6 @@ export class Main {
     this.preview = new Preview();
   }
   cardsList(data: Data) {
-    console.log(data);
-
     const template = new DocumentFragment();
     data.docs.forEach((element) => {
       imgListItemParams.attr["data-id"] = element.id;
@@ -153,7 +151,7 @@ export class Main {
   }
 
   previewCreator(data) {
-    this.preview.setData(data);
+    this.preview.builder(data);
     const previewElement = this.preview.getPreview() as HTMLElement;
     this.container?.append(previewElement);
   }
