@@ -1,3 +1,5 @@
+// import style from "./preview.module.css";
+
 export const previewParams = {
   tagName: "div",
   classList: [],
@@ -21,7 +23,9 @@ export const posterWrapperParams = {
 export const posterImgParams = {
   tagName: "img",
   classList: [],
-  attr: {},
+  attr: {
+    src: "",
+  },
 };
 
 export const heroContainerParams = {
@@ -30,14 +34,8 @@ export const heroContainerParams = {
   attr: {},
 };
 
-export const nameWrapperParams = {
-  tagName: "div",
-  classList: [],
-  attr: {},
-};
-
 export const filmNameParams = {
-  tagName: "span",
+  tagName: "h1",
   classList: [],
   attr: {},
   text: "",
@@ -80,6 +78,7 @@ export const tagsItemParams = {
   tagName: "div",
   classList: [],
   attr: {},
+  text: "",
 };
 
 export const rateConteinerParams = {
