@@ -68,6 +68,25 @@ export const timeParams = {
   text: "",
 };
 
+export const premiereWrapperParams = {
+  tagName: "div",
+  classList: [],
+  attr: {},
+};
+
+export const premiereIconParams = {
+  tagName: "img",
+  classList: [],
+  attr: {},
+};
+
+export const premiereParams = {
+  tagName: "span",
+  classList: [],
+  attr: {},
+  text: "",
+};
+
 export const previewTagsParams = {
   tagName: "div",
   classList: [],

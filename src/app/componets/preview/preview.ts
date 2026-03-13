@@ -15,6 +15,9 @@ import {
   rateConteinerParams,
   previewImdbParams,
   previewAgeParams,
+  premiereWrapperParams,
+  premiereIconParams,
+  premiereParams,
 } from "./preview-params";
 
 export class Preview {
@@ -63,6 +66,26 @@ export class Preview {
       infoContainerParams,
     ).getElement() as HTMLElement;
 
+    const premiereWrapper = new Creator(
+      premiereWrapperParams,
+    ).getElement() as HTMLElement;
+    const premiereIcon = new Creator(
+      premiereIconParams,
+    ).getElement() as HTMLImageElement;
+
+    let worldPremiere = null;
+    if (data.premiere && data.premiere.world) {
+      worldPremiere = new Date(data.premiere.world).toLocaleDateString(
+        "ru-RU",
+        { month: "long", day: "numeric", year: "numeric" },
+      );
+    } else {
+      worldPremiere = "Неизвестно";
+    }
+    premiereParams.text = `Премьера в мире: ${worldPremiere}`;
+    const premiere = new Creator(premiereParams).getElement() as HTMLElement;
+    // Дз тут выполнить (cucumber)
+
     if (data.type) {
       typeParams.text = data.type;
     }
@@ -105,8 +128,15 @@ export class Preview {
 
     headerElement.append(posterWrapper, heroContainer);
     posterWrapper.append(posterImg);
-    heroContainer.append(filmName, infoContainer, previewTags, rateContainer);
+    heroContainer.append(
+      filmName,
+      infoContainer,
+      premiereWrapper,
+      previewTags,
+      rateContainer,
+    );
     infoContainer.append(type, year, time);
+    premiereWrapper.append(premiereIcon, premiere);
     rateContainer.append(previewImdb, previewAge);
 
     return headerElement;
