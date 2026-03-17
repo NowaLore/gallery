@@ -82,9 +82,23 @@ export class Preview {
     } else {
       worldPremiere = "Неизвестно";
     }
+
     premiereParams.text = `Премьера в мире: ${worldPremiere}`;
     const premiere = new Creator(premiereParams).getElement() as HTMLElement;
-    // Дз тут выполнить (cucumber)
+
+    let ruPremiere = null;
+    if (data.premiere && data.premiere.russia) {
+      ruPremiere = new Date(data.premiere.russia).toLocaleDateString("ru-RU", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      });
+    } else {
+      ruPremiere = "Неизвестно";
+    }
+
+    premiereParams.text = `Премьера в России: ${ruPremiere}`;
+    const premiereRu = new Creator(premiereParams).getElement() as HTMLElement;
 
     if (data.type) {
       typeParams.text = data.type;
@@ -136,7 +150,7 @@ export class Preview {
       rateContainer,
     );
     infoContainer.append(type, year, time);
-    premiereWrapper.append(premiereIcon, premiere);
+    premiereWrapper.append(premiereIcon, premiere, premiereRu);
     rateContainer.append(previewImdb, previewAge);
 
     return headerElement;
