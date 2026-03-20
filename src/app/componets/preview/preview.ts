@@ -69,6 +69,9 @@ export class Preview {
     const premiereWrapper = new Creator(
       premiereWrapperParams,
     ).getElement() as HTMLElement;
+
+    premiereIconParams.attr.src = "/global.svg";
+
     const premiereIcon = new Creator(
       premiereIconParams,
     ).getElement() as HTMLImageElement;
@@ -104,20 +107,39 @@ export class Preview {
       typeParams.text = data.type;
     }
 
+    if (data.type && data.type === "movie") {
+      typeParams.text = "Фильм";
+    }
+
+    if (data.type && data.type === "anime") {
+      typeParams.text = "Аниме";
+    }
+
+    if (data.type && data.type === "cartoon") {
+      typeParams.text = "Мультфильм";
+    }
+
+    if (data.type && data.type === "tv-series") {
+      typeParams.text = "Сериал";
+    }
+
     const type = new Creator(typeParams).getElement() as HTMLElement;
 
     if (data.year) {
-      yearParams.text = data.year;
+      yearParams.text = `Год: ${data.year}`;
     }
 
     const year = new Creator(yearParams).getElement() as HTMLElement;
 
-    if (data.movieLength) {
-      timeParams.text = data.movieLength;
-    }
-
     const time = new Creator(timeParams).getElement() as HTMLElement;
 
+    if (data.movieLength) {
+      const hours = Math.floor(data.movieLength / 60);
+      const minutes = data.movieLength % 60;
+      time.innerText = `Длительность: ${hours}ч. ${minutes}мин.`;
+    } else {
+      time.innerText = `Длительность: неизвестна`;
+    }
     const previewTags = new Creator(
       previewTagsParams,
     ).getElement() as HTMLElement;

@@ -1,17 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* font-family: "Montserrat", sans-serif; */
 .preview {
+
 
 }
 
 .headerPreview {
-
+display: flex;
+gap: 75px;
 }
 
 .posterWrapper {
-
+aspect-ratio: 6/8;
+max-width: 500px;
+width: 100%;
+border-radius: 24px;
+overflow: hidden;
 }
 
 .posterImg {
-
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .heroContainer {
@@ -19,15 +31,21 @@
 }
 
 .filmName {
-
+font-family: "Montserrat", sans-serif;
+font-weight: 700;
+font-size: 48px;
+line-height: 1;
 }
 
 .infoContainer {
-
+display: flex;
+gap: 8px;
+font-family: "Montserrat", sans-serif;
+font-weight: 400;
+font-size: 16px;
 }
 
 .typePreview {
-
 }
 
 .yearPreview {
@@ -39,7 +57,7 @@
 }
 
 .previewTags {
-    
+
 }
 
 .tagsItem {
@@ -55,5 +73,26 @@
 }
 
 .previewAge {
-    
+
+}
+
+.premiereWrapper {
+display: flex;
+gap: 8px;
+font-family: "Montserrat", sans-serif;
+font-weight: 400;
+font-size: 16px;
+}
+
+.premiereIcon {
+height: 24px;
+width: 24px;
+}
+
+.premiere {
+
+}
+
+.premiereRu {
+
 }

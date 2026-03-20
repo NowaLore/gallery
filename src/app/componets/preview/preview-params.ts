@@ -1,8 +1,8 @@
-// import style from "./preview.module.css";
+import style from "./preview.module.css";
 
 export const previewParams = {
   tagName: "div",
-  classList: [],
+  classList: [style.preview],
   attr: {
     "data-preview": "",
   },
@@ -10,19 +10,19 @@ export const previewParams = {
 
 export const headerParams = {
   tagName: "div",
-  classList: [],
+  classList: [style.headerPreview],
   attr: {},
 };
 
 export const posterWrapperParams = {
   tagName: "div",
-  classList: [],
+  classList: [style.posterWrapper],
   attr: {},
 };
 
 export const posterImgParams = {
   tagName: "img",
-  classList: [],
+  classList: [style.posterImg],
   attr: {
     src: "",
   },
@@ -36,14 +36,14 @@ export const heroContainerParams = {
 
 export const filmNameParams = {
   tagName: "h1",
-  classList: [],
+  classList: [style.filmName],
   attr: {},
   text: "",
 };
 
 export const infoContainerParams = {
   tagName: "div",
-  classList: [],
+  classList: [style.infoContainer],
   attr: {},
 };
 
@@ -70,14 +70,16 @@ export const timeParams = {
 
 export const premiereWrapperParams = {
   tagName: "div",
-  classList: [],
+  classList: [style.premiereWrapper],
   attr: {},
 };
 
 export const premiereIconParams = {
   tagName: "img",
-  classList: [],
-  attr: {},
+  classList: [style.premiereIcon],
+  attr: {
+    src: "",
+  },
 };
 
 export const premiereParams = {
